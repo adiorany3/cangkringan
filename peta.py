@@ -186,12 +186,16 @@ elif page == "Peta Interaktif":
     csv_file = os.path.join(current_dir, 'data_cangkringan.csv')
     data = pd.read_csv(csv_file)
     
+    # Calculate the center point from all data points
+    center_lat = data['latitude'].mean()
+    center_lon = data['longitude'].mean()
+    
     # Create a folium map with OpenStreetMap
     fig = Figure(width=900, height=600)
 
-    # Create the map with OpenStreetMap
+    # Create the map with OpenStreetMap using calculated center
     m = folium.Map(
-        location=[-7.6079, 110.4415], 
+        location=[center_lat, center_lon], 
         zoom_start=12,
         tiles="OpenStreetMap",
         attr='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -229,6 +233,11 @@ elif page == "Peta Interaktif":
             popup=popup,
             icon=dairy_icon if 'https://cdn-icons-png.flaticon.com/512/2395/2395796.png' else None
         ).add_to(marker_cluster)
+    
+    # Fit the map to show all markers
+    sw = data[['latitude', 'longitude']].min().values.tolist()
+    ne = data[['latitude', 'longitude']].max().values.tolist()
+    m.fit_bounds([sw, ne])
     
     # Add a minimap to help with navigation
     folium.plugins.MiniMap().add_to(m)
