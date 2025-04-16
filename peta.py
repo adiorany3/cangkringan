@@ -420,7 +420,7 @@ else:  # About page
         <h3><p style="color: black;">Kontak</h3>
         <p style="color: black;">Untuk informasi lebih lanjut atau pertanyaan terkait data, silakan hubungi:</p>
         <p style="color: black;"><b>Email:</b> info@sapiperancangkringan.id</p>
-        <p style="color: black;">b>Telepon:</b> +62 274 123456</p>
+        <p style="color: black;"><b>Telepon:</b> +62 274 123456</p>
     </div>
     """, unsafe_allow_html=True)
 
