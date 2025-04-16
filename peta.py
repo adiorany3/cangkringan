@@ -188,8 +188,8 @@ elif page == "Peta Interaktif":
     
     # Calculate the center point from all data points
     # Exact coordinates for Kecamatan Cangkringan center
-    center_lat = 7.6422  # Adjusted to be more centered on Cangkringan
-    center_lon = 110.4350  # Adjusted to be more centered on Cangkringan
+    center_lat = -7.6422  # Mengubah dari 7.6422 (nilai positif) menjadi -7.6422 (nilai negatif)
+    center_lon = 110.4350  # Mempertahankan nilai longitude
     
     # Create a folium map with OpenStreetMap
     fig = Figure(width=1000, height=700)
@@ -223,10 +223,11 @@ elif page == "Peta Interaktif":
     # Add marker cluster for better visualization when there are many markers
     marker_cluster = MarkerCluster().add_to(m)
     
-    # Add custom dairy farm icon
-    dairy_icon = folium.features.CustomIcon(
-        "https://cdn-icons-png.flaticon.com/512/2395/2395796.png",
-        icon_size=(30, 30)
+    # Menggunakan ikon bawaan Folium sebagai alternatif
+    dairy_icon = folium.Icon(
+        icon='info-sign', 
+        color='green',
+        icon_color='white'
     )
     
     # Add markers with custom icon and popup information
@@ -271,8 +272,8 @@ elif page == "Peta Interaktif":
     
     # Define the bounds specifically for Cangkringan area
     # Using slightly expanded boundaries for better visibility
-    sw = [7.6300, 110.4200]  # Southwest corner of Cangkringan
-    ne = [7.6550, 110.4550]  # Northeast corner of Cangkringan
+    sw = [-7.6550, 110.4200]  # Southwest corner of Cangkringan
+    ne = [-7.6300, 110.4550]  # Northeast corner of Cangkringan
     m.fit_bounds([sw, ne])
     
     # Add a minimap to help with navigation
