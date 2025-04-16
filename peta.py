@@ -189,11 +189,28 @@ elif page == "Peta Interaktif":
     # Buat peta terpusat di Kecamatan Cangkringan, Yogyakarta
     m = folium.Map(location=[-7.6079, 110.4415], zoom_start=12)
 
-    # Tambahkan marker untuk setiap lokasi pada data CSV
+    # Tambahkan marker untuk setiap lokasi pada data CSV dengan informasi lengkap
     for idx, row in data.iterrows():
+        # Buat popup dengan informasi lengkap dari data CSV
+        popup_html = f"""
+        <div style="width:250px">
+            <h4 style="color:#2e7d32; margin-bottom:10px">{row['nama_lokasi']}</h4>
+            <p><b>Alamat:</b> {row['alamat']}</p>
+            <p><b>Desa:</b> {row['desa']}</p>
+            <p><b>Jumlah Sapi:</b> {row['jumlah_sapi']} ekor</p>
+            <p><b>Produksi Susu:</b> {row['produksi_susu']} liter/hari</p>
+            <p><b>Koordinat:</b> {row['latitude']}, {row['longitude']}</p>
+        </div>
+        """
+        
+        # Buat popup dengan custom styling
+        popup = folium.Popup(popup_html, max_width=300)
+        
+        # Tambahkan marker ke peta
         folium.Marker(
             location=[row['latitude'], row['longitude']],
-            popup=row['nama_lokasi']
+            popup=popup,
+            tooltip=row['nama_lokasi']
         ).add_to(m)
     
     # Tambahkan kontrol layer
