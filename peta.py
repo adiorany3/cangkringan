@@ -133,7 +133,7 @@ if page == "Beranda":
     with col1:
         st.markdown(f"""
         <div class="card" style="text-align:center;">
-            <h1>{len(data)}</h1>
+            <h1><p><p style="color: black;">{len(data)}</h1>
             <p><p style="color: black;">Jumlah Lokasi Peternakan</p>
         </div>
         """, unsafe_allow_html=True)
@@ -147,7 +147,7 @@ if page == "Beranda":
             
         st.markdown(f"""
         <div class="card" style="text-align:center;">
-            <h1>{total_sapi}</h1>
+            <h1><p><p style="color: black;">{total_sapi}</h1>
             <p><p style="color: black;">Total Sapi Perah</p>
         </div>
         """, unsafe_allow_html=True)
@@ -161,7 +161,7 @@ if page == "Beranda":
             
         st.markdown(f"""
         <div class="card" style="text-align:center;">
-            <h1>{total_desa}</h1>
+            <h1><p><p style="color: black;">{total_desa}</h1>
             <p><p style="color: black;">Total Desa</p>
         </div>
         """, unsafe_allow_html=True)
