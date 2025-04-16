@@ -177,7 +177,7 @@ if page == "Beranda":
     )
 
 elif page == "Peta Interaktif":
-    st.title("Peta Interaktif Lokasi Sapi Perah")
+    st.title("Peta Interaktif Lokasi Sapi Perah Kecamatan Cangkringan")
     
     # Dapatkan path absolut direktori script saat ini
     current_dir = os.path.dirname(os.path.abspath(__file__))
@@ -187,21 +187,37 @@ elif page == "Peta Interaktif":
     data = pd.read_csv(csv_file)
     
     # Calculate the center point from all data points
-    center_lat = data['latitude'].mean()
-    center_lon = data['longitude'].mean()
+    # Exact coordinates for Kecamatan Cangkringan center
+    center_lat = 7.6422  # Adjusted to be more centered on Cangkringan
+    center_lon = 110.4350  # Adjusted to be more centered on Cangkringan
     
     # Create a folium map with OpenStreetMap
     fig = Figure(width=900, height=600)
 
-    # Create the map with OpenStreetMap using calculated center
+    # Create the map with OpenStreetMap using Cangkringan center
     m = folium.Map(
         location=[center_lat, center_lon], 
-        zoom_start=12,
+        zoom_start=13,  # Increased zoom level to focus on Cangkringan
         tiles="OpenStreetMap",
         attr='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     )
         
     fig.add_child(m)
+    
+    # Add multiple map tile options
+    folium.TileLayer('CartoDB positron', name='Light Map').add_to(m)
+    folium.TileLayer('CartoDB dark_matter', name='Dark Map').add_to(m)
+    folium.TileLayer('Stamen Terrain', name='Terrain Map').add_to(m)
+    
+    # Add Cangkringan label
+    folium.Marker(
+        [center_lat, center_lon],
+        icon=folium.DivIcon(
+            icon_size=(150, 36),
+            icon_anchor=(75, 18),
+            html='<div style="font-size: 18pt; color: darkgreen; font-weight: bold">Kecamatan Cangkringan</div>'
+        )
+    ).add_to(m)
     
     # Add marker cluster for better visualization when there are many markers
     marker_cluster = MarkerCluster().add_to(m)
@@ -241,6 +257,9 @@ elif page == "Peta Interaktif":
     
     # Add a minimap to help with navigation
     folium.plugins.MiniMap().add_to(m)
+    
+    # Add layer control for switching between map tiles
+    folium.LayerControl().add_to(m)
     
     # Display the map in Streamlit with additional options
     st_data = st_folium(
