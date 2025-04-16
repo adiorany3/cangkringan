@@ -1,9 +1,21 @@
-nama_lokasi,latitude,longitude,deskripsi
-Desa Wisata Pentingsari,-7.6229,110.4315,"Desa wisata dengan konsep eco-tourism dan budaya lokal"
-Lava Tour Merapi,-7.5800,110.4428,"Area wisata untuk melihat bekas aliran lava Gunung Merapi"
-Bunker Kaliadem,-7.5830,110.4450,"Bunker pengungsian saat erupsi Merapi"
-Candi Kedulan,-7.6467,110.4728,"Candi Hindu dari abad ke-9"
-Museum Gunung Merapi,-7.6115,110.4234,"Museum yang menyimpan informasi dan artefak erupsi Merapi"
-Embung Tambakboyo,-7.6400,110.4522,"Embung untuk irigasi dan wisata"
-Kebun Buah Mangunan,-7.6154,110.4315,"Kebun buah dengan pemandangan indah"
-Situs Kaliurang,-7.5865,110.4225,"Situs sejarah dan wisata alam"
+nama_lokasi,alamat,latitude,longitude,jumlah_sapi,desa,produksi_susu
+Peternakan Sukamaju,Jl. Kaliurang Km 20 RT 01/RW 02,7.6412,110.4275,25,Argomulyo,375
+Peternakan Barokah,Jl. Merapi Indah RT 03/RW 05,7.6358,110.4350,18,Glagaharjo,260
+Peternakan Makmur Jaya,Jl. Cangkringan Barat No. 15,7.6501,110.4458,32,Kepuharjo,490
+Peternakan Sejahtera,Jl. Yogya-Solo Km 23 RT 04/RW 01,7.6389,110.4520,15,Umbulharjo,230
+Peternakan Lestari,Jl. Kaliurang Timur No. 8,7.6475,110.4387,22,Wukirsari,345
+Peternakan Maju Bersama,Jl. Kaliadem RT 02/RW 04,7.6331,110.4410,28,Glagaharjo,420
+Peternakan Berkah Abadi,Jl. Merapi Selatan No. 12,7.6445,110.4298,19,Argomulyo,285
+Peternakan Subur Makmur,Jl. Cangkringan Utara RT 05/RW 03,7.6521,110.4376,30,Kepuharjo,450
+Peternakan Tani Maju,Jl. Kaliurang Barat No. 23,7.6368,110.4489,17,Umbulharjo,255
+Peternakan Hasil Karya,Jl. Merapi Permai RT 01/RW 06,7.6458,110.4312,23,Wukirsari,345
+Peternakan Sumber Rejeki,Jl. Kaliurang Km 21 RT 03/RW 02,7.6405,110.4262,20,Argomulyo,300
+Peternakan Maju Jaya,Jl. Cangkringan Timur No. 9,7.6485,110.4444,26,Kepuharjo,390
+Peternakan Sumber Makmur,Jl. Yogya-Solo Km 24 RT 02/RW 01,7.6376,110.4508,14,Umbulharjo,210
+Peternakan Tani Makmur,Jl. Merapi Indah Blok C No. 5,7.6345,110.4337,21,Glagaharjo,315
+Peternakan Gemah Ripah,Jl. Kaliurang Tengah No. 17,7.6489,110.4396,24,Wukirsari,360
+Peternakan Maju Lancar,Jl. Cangkringan Selatan RT 04/RW 03,7.6508,110.4363,27,Kepuharjo,405
+Peternakan Bahagia,Jl. Merapi Barat No. 11,7.6422,110.4285,16,Argomulyo,240
+Peternakan Karya Tani,Jl. Kaliurang Km 22 RT 02/RW 04,7.6352,110.4325,29,Glagaharjo,435
+Peternakan Maju Sejahtera,Jl. Yogya-Solo Km 25 RT 01/RW 02,7.6396,110.4534,18,Umbulharjo,270
+Peternakan Hasil Bumi,Jl. Merapi Permai Blok A No. 3,7.6465,110.4401,25,Wukirsari,375
