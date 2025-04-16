@@ -105,7 +105,7 @@ if page == "Beranda":
         st.title("Peta Lokasi Sapi Perah Cangkringan")
         st.markdown("""
         <div class="card">
-        <p>Visualisasi interaktif persebaran dan data peternakan sapi perah di Kecamatan Cangkringan, Yogyakarta. 
+        <p><p style="color: black;">Visualisasi interaktif persebaran dan data peternakan sapi perah di Kecamatan Cangkringan, Yogyakarta. 
         Data ini dikumpulkan pada April 2025 dan mencakup informasi tentang lokasi peternakan serta jumlah sapi.</p>
         </div>
         """, unsafe_allow_html=True)
