@@ -1,4 +1,4 @@
-pandas
-folium
-streamlit
-streamlit_folium
+streamlit>=1.25.0
+pandas>=2.0.0
+folium>=0.14.0
+streamlit-folium>=0.15.0
