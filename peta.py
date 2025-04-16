@@ -4,6 +4,11 @@ import os
 import streamlit as st
 from streamlit_folium import st_folium
 
+st.set_page_config(
+    page_title="Data Sapi Perah di Cangkringan",
+    page_icon="./assets/sapi_favicon.png",
+)
+
 # Set judul aplikasi
 st.title("Peta Lokasi Cangkringan")
 st.write("Visualisasi peta lokasi di Kecamatan Cangkringan, Yogyakarta")
