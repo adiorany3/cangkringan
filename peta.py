@@ -6,13 +6,21 @@ import streamlit as st
 from streamlit_folium import st_folium
 import datetime
 import matplotlib.pyplot as plt
-import base64
+import numpy as np
 from branca.element import Figure
+
+# This MUST be the first st.* call in your script
+st.set_page_config(
+    page_title="Data Sapi Perah di Cangkringan",
+    page_icon="./assets/sapi_favicon.png",
+    layout="wide",
+    initial_sidebar_state="expanded"
+)
 
 # Get current year for the footer
 current_year = datetime.datetime.now().year
 
-# Custom CSS styling for the entire app
+# Custom CSS styling (must come AFTER st.set_page_config)
 st.markdown("""
 <style>
     .main {
@@ -62,13 +70,6 @@ st.markdown("""
     }
 </style>
 """, unsafe_allow_html=True)
-
-st.set_page_config(
-    page_title="Data Sapi Perah di Cangkringan",
-    page_icon="./assets/sapi_favicon.png",
-    layout="wide",
-    initial_sidebar_state="expanded"
-)
 
 # Sidebar for navigation and filters
 with st.sidebar:
