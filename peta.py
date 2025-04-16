@@ -191,6 +191,10 @@ elif page == "Peta Interaktif":
 
     # Tambahkan marker untuk setiap lokasi pada data CSV dengan informasi lengkap
     for idx, row in data.iterrows():
+        # Pastikan latitude negatif (karena di selatan ekuator)
+        lat = -abs(row['latitude'])  # Memastikan nilai latitude negatif
+        lon = row['longitude']
+        
         # Buat popup dengan informasi lengkap dari data CSV
         popup_html = f"""
         <div style="width:250px">
@@ -199,7 +203,7 @@ elif page == "Peta Interaktif":
             <p><b>Desa:</b> {row['desa']}</p>
             <p><b>Jumlah Sapi:</b> {row['jumlah_sapi']} ekor</p>
             <p><b>Produksi Susu:</b> {row['produksi_susu']} liter/hari</p>
-            <p><b>Koordinat:</b> {row['latitude']}, {row['longitude']}</p>
+            <p><b>Koordinat:</b> {lat}, {lon}</p>
         </div>
         """
         
@@ -208,7 +212,7 @@ elif page == "Peta Interaktif":
         
         # Tambahkan marker ke peta
         folium.Marker(
-            location=[row['latitude'], row['longitude']],
+            location=[lat, lon],
             popup=popup,
             tooltip=row['nama_lokasi']
         ).add_to(m)
