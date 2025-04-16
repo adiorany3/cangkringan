@@ -76,8 +76,20 @@ st.markdown("""
 
 # Sidebar for navigation and filters
 with st.sidebar:
-    st.image(os.path.join(current_dir, "assets", "sapi_favicon.png"), width=100)
+    # Try to load the image, but handle the case if it doesn't exist
+    favicon_path = os.path.join(current_dir, "assets", "sapi_favicon.png")
+    if os.path.exists(favicon_path):
+        st.image(favicon_path, width=100)
+    else:
+        st.warning("🐄 Gambar sapi tidak ditemukan")
+    
     st.title("Navigasi")
+    
+    # Navigation options
+    page = st.radio(
+        "Pilih Halaman:",
+        ["Beranda", "Peta Interaktif", "Statistik", "Tentang"]
+    )
     
     st.markdown("""<div class="cow-pattern">
     <h3>Tentang Aplikasi</h3>
