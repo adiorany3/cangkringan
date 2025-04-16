@@ -396,33 +396,31 @@ else:  # About page
     
     st.markdown("""
     <div class="card">
-        <h3>Peta Lokasi Sapi Perah Cangkringan</h3>
+        <h3><p style="color: black;">Peta Lokasi Sapi Perah Cangkringan</h3>
         
-        <p>Aplikasi ini dikembangkan untuk memvisualisasikan persebaran peternakan sapi perah di Kecamatan Cangkringan, Yogyakarta. 
+        Aplikasi ini dikembangkan untuk memvisualisasikan persebaran peternakan sapi perah di Kecamatan Cangkringan, Yogyakarta. 
         Dengan memanfaatkan teknologi pemetaan interaktif, aplikasi ini memudahkan pemangku kepentingan dalam melihat distribusi
         peternakan sapi perah dan menganalisis potensi pengembangan industri susu di wilayah tersebut.</p>
         
-        <h4>Fitur:</h4>
-        <ul>
-            <li>Visualisasi data peternakan dalam bentuk tabel interaktif</li>
-            <li>Peta interaktif dengan marker lokasi peternakan</li>
-            <li>Statistik dan diagram persebaran sapi perah per desa</li>
-            <li>Analisis produksi susu dari setiap peternakan</li>
-            <li>Informasi tentang peternakan terbesar di wilayah Cangkringan</li>
-        </ul>
+        Fitur:
+        Visualisasi data peternakan dalam bentuk tabel interaktif
+        Peta interaktif dengan marker lokasi peternakan
+        Statistik dan diagram persebaran sapi perah per desa
+        Analisis produksi susu dari setiap peternakan
+        Informasi tentang peternakan terbesar di wilayah Cangkringan
         
-        <h4>Sumber Data:</h4>
-        <p>Data dalam aplikasi ini dikumpulkan melalui survei lapangan dan koordinasi dengan Dinas Peternakan setempat 
-        pada bulan April 2025.</p>
+        Sumber Data:
+        Data dalam aplikasi ini dikumpulkan melalui survei lapangan dan koordinasi dengan Dinas Peternakan setempat 
+        pada bulan April 2025.
     </div>
     """, unsafe_allow_html=True)
     
     st.markdown("""
     <div class="card cow-pattern">
-        <h3>Kontak</h3>
-        <p>Untuk informasi lebih lanjut atau pertanyaan terkait data, silakan hubungi:</p>
-        <p><b>Email:</b> info@sapiperancangkringan.id</p>
-        <p><b>Telepon:</b> +62 274 123456</p>
+        <h3><p style="color: black;">Kontak</h3>
+        <p><p style="color: black;">Untuk informasi lebih lanjut atau pertanyaan terkait data, silakan hubungi:</p>
+        <p><p style="color: black;"><b>Email:</b> info@sapiperancangkringan.id</p>
+        <p><<p style="color: black;">b>Telepon:</b> +62 274 123456</p>
     </div>
     """, unsafe_allow_html=True)
 
