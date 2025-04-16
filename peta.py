@@ -236,7 +236,8 @@ elif page == "Peta Interaktif":
             <h4>{row['nama_lokasi']}</h4>
             <p><b>Alamat:</b> {row.get('alamat', 'N/A')}</p>
             <p><b>Jumlah Sapi:</b> {row.get('jumlah_sapi', 'N/A')}</p>
-            <p><b>Koordinat:</b> {row['latitude']}, {row['longitude']}</p>
+            <p><b>Desa:</b> {row.get('desa', 'N/A')}</p>
+            <p><b>Produksi Susu:</b> {row.get('produksi_susu', 'N/A')} liter/hari</p>
         </div>
         """
         
@@ -250,9 +251,10 @@ elif page == "Peta Interaktif":
             icon=dairy_icon if 'https://cdn-icons-png.flaticon.com/512/2395/2395796.png' else None
         ).add_to(marker_cluster)
     
-    # Fit the map to show all markers
-    sw = data[['latitude', 'longitude']].min().values.tolist()
-    ne = data[['latitude', 'longitude']].max().values.tolist()
+    # Define the bounds specifically for Cangkringan area
+    # Using slightly expanded boundaries for better visibility
+    sw = [7.6300, 110.4200]  # Southwest corner of Cangkringan
+    ne = [7.6550, 110.4550]  # Northeast corner of Cangkringan
     m.fit_bounds([sw, ne])
     
     # Add a minimap to help with navigation
