@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_052c628ce935115b6a5897beb0c56d6e {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_052c628ce935115b6a5897beb0c56d6e" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_052c628ce935115b6a5897beb0c56d6e = L.map(
+                "map_052c628ce935115b6a5897beb0c56d6e",
+                {
+                    center: [-7.6079, 110.4415],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 12,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_a7751ad8efdd746e6b6a7b0d8413d765 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_a7751ad8efdd746e6b6a7b0d8413d765.addTo(map_052c628ce935115b6a5897beb0c56d6e);
+        
+    
+            var marker_f28d18902efc4498e4ac711782f0161c = L.marker(
+                [-7.6229, 110.4315],
+                {
+}
+            ).addTo(map_052c628ce935115b6a5897beb0c56d6e);
+        
+    
+        var popup_33c8fdc08fc020774eff06d9715046f4 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f8f3f78b12ee433e835533be32f97fc4 = $(`<div id="html_f8f3f78b12ee433e835533be32f97fc4" style="width: 100.0%; height: 100.0%;">Desa Wisata Pentingsari</div>`)[0];
+                popup_33c8fdc08fc020774eff06d9715046f4.setContent(html_f8f3f78b12ee433e835533be32f97fc4);
+            
+        
+
+        marker_f28d18902efc4498e4ac711782f0161c.bindPopup(popup_33c8fdc08fc020774eff06d9715046f4)
+        ;
+
+        
+    
+    
+            var marker_db1746ce7bcacafef26b4d92f8389a3b = L.marker(
+                [-7.58, 110.4428],
+                {
+}
+            ).addTo(map_052c628ce935115b6a5897beb0c56d6e);
+        
+    
+        var popup_c0108cfee1bbbe800903bb0521210e13 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7416781f85beb4e7edd5ebca277edb0e = $(`<div id="html_7416781f85beb4e7edd5ebca277edb0e" style="width: 100.0%; height: 100.0%;">Lava Tour Merapi</div>`)[0];
+                popup_c0108cfee1bbbe800903bb0521210e13.setContent(html_7416781f85beb4e7edd5ebca277edb0e);
+            
+        
+
+        marker_db1746ce7bcacafef26b4d92f8389a3b.bindPopup(popup_c0108cfee1bbbe800903bb0521210e13)
+        ;
+
+        
+    
+    
+            var marker_625290fbbb9017c159fee7d323190cd4 = L.marker(
+                [-7.583, 110.445],
+                {
+}
+            ).addTo(map_052c628ce935115b6a5897beb0c56d6e);
+        
+    
+        var popup_2a10141db27793ddd18a9a7cc888c2c5 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f4134801c7a6a53889448249cb3aa776 = $(`<div id="html_f4134801c7a6a53889448249cb3aa776" style="width: 100.0%; height: 100.0%;">Bunker Kaliadem</div>`)[0];
+                popup_2a10141db27793ddd18a9a7cc888c2c5.setContent(html_f4134801c7a6a53889448249cb3aa776);
+            
+        
+
+        marker_625290fbbb9017c159fee7d323190cd4.bindPopup(popup_2a10141db27793ddd18a9a7cc888c2c5)
+        ;
+
+        
+    
+    
+            var marker_7fd26e3587678381c9eab78981aa31e8 = L.marker(
+                [-7.6467, 110.4728],
+                {
+}
+            ).addTo(map_052c628ce935115b6a5897beb0c56d6e);
+        
+    
+        var popup_3c74b897c724fa88f16a41feb00854c8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_207121c26407bb6de4220532d90f4cb8 = $(`<div id="html_207121c26407bb6de4220532d90f4cb8" style="width: 100.0%; height: 100.0%;">Candi Kedulan</div>`)[0];
+                popup_3c74b897c724fa88f16a41feb00854c8.setContent(html_207121c26407bb6de4220532d90f4cb8);
+            
+        
+
+        marker_7fd26e3587678381c9eab78981aa31e8.bindPopup(popup_3c74b897c724fa88f16a41feb00854c8)
+        ;
+
+        
+    
+    
+            var marker_e8d801fab8103864ad3e00d7ce18857a = L.marker(
+                [-7.6115, 110.4234],
+                {
+}
+            ).addTo(map_052c628ce935115b6a5897beb0c56d6e);
+        
+    
+        var popup_3bce72556eb61c83037010c0ea579320 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e199341c003fad95b550c5e01f8be24b = $(`<div id="html_e199341c003fad95b550c5e01f8be24b" style="width: 100.0%; height: 100.0%;">Museum Gunung Merapi</div>`)[0];
+                popup_3bce72556eb61c83037010c0ea579320.setContent(html_e199341c003fad95b550c5e01f8be24b);
+            
+        
+
+        marker_e8d801fab8103864ad3e00d7ce18857a.bindPopup(popup_3bce72556eb61c83037010c0ea579320)
+        ;
+
+        
+    
+    
+            var marker_71ad986f7ee8223699ada73cc099087c = L.marker(
+                [-7.64, 110.4522],
+                {
+}
+            ).addTo(map_052c628ce935115b6a5897beb0c56d6e);
+        
+    
+        var popup_93539c6061aa6fbffc130a9469a275f6 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_71afdc492171769a210227725d237f90 = $(`<div id="html_71afdc492171769a210227725d237f90" style="width: 100.0%; height: 100.0%;">Embung Tambakboyo</div>`)[0];
+                popup_93539c6061aa6fbffc130a9469a275f6.setContent(html_71afdc492171769a210227725d237f90);
+            
+        
+
+        marker_71ad986f7ee8223699ada73cc099087c.bindPopup(popup_93539c6061aa6fbffc130a9469a275f6)
+        ;
+
+        
+    
+    
+            var marker_6582a2f02492ed4ee3dd325513eefe4c = L.marker(
+                [-7.6154, 110.4315],
+                {
+}
+            ).addTo(map_052c628ce935115b6a5897beb0c56d6e);
+        
+    
+        var popup_a554a0628efef1ad790efb55a05844ba = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_bb8b84b3c791b10529760c058b32f4c3 = $(`<div id="html_bb8b84b3c791b10529760c058b32f4c3" style="width: 100.0%; height: 100.0%;">Kebun Buah Mangunan</div>`)[0];
+                popup_a554a0628efef1ad790efb55a05844ba.setContent(html_bb8b84b3c791b10529760c058b32f4c3);
+            
+        
+
+        marker_6582a2f02492ed4ee3dd325513eefe4c.bindPopup(popup_a554a0628efef1ad790efb55a05844ba)
+        ;
+
+        
+    
+    
+            var marker_328d642f48af87a085bcff1017a99b06 = L.marker(
+                [-7.5865, 110.4225],
+                {
+}
+            ).addTo(map_052c628ce935115b6a5897beb0c56d6e);
+        
+    
+        var popup_370e02a901efbf84a8a364d9314b79f9 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f6bbe3c865abcc52130eef2b477e7a07 = $(`<div id="html_f6bbe3c865abcc52130eef2b477e7a07" style="width: 100.0%; height: 100.0%;">Situs Kaliurang</div>`)[0];
+                popup_370e02a901efbf84a8a364d9314b79f9.setContent(html_f6bbe3c865abcc52130eef2b477e7a07);
+            
+        
+
+        marker_328d642f48af87a085bcff1017a99b06.bindPopup(popup_370e02a901efbf84a8a364d9314b79f9)
+        ;
+
+        
+    
+</script>
+</html>
