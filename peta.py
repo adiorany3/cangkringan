@@ -76,13 +76,6 @@ st.markdown("""
 
 # Sidebar for navigation and filters
 with st.sidebar:
-    # Try to load the image, but handle the case if it doesn't exist
-    favicon_path = os.path.join(current_dir, "assets", "sapi_favicon.png")
-    if os.path.exists(favicon_path):
-        st.image(favicon_path, width=100)
-    else:
-        st.warning("🐄 Gambar sapi tidak ditemukan")
-    
     st.title("Navigasi")
     
     # Navigation options
