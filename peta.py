@@ -192,14 +192,15 @@ elif page == "Peta Interaktif":
     center_lon = 110.4350  # Adjusted to be more centered on Cangkringan
     
     # Create a folium map with OpenStreetMap
-    fig = Figure(width=900, height=600)
+    fig = Figure(width=1000, height=700)
 
     # Create the map with OpenStreetMap using Cangkringan center
     m = folium.Map(
         location=[center_lat, center_lon], 
         zoom_start=13,  # Increased zoom level to focus on Cangkringan
         tiles="OpenStreetMap",
-        attr='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        attr='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+        control_scale=True  # Menambahkan skala peta
     )
         
     fig.add_child(m)
@@ -248,8 +249,25 @@ elif page == "Peta Interaktif":
         folium.Marker(
             location=[row['latitude'], row['longitude']],
             popup=popup,
-            icon=dairy_icon if 'https://cdn-icons-png.flaticon.com/512/2395/2395796.png' else None
+            icon=dairy_icon
         ).add_to(marker_cluster)
+    
+    # Add location search feature
+    folium.plugins.Search(
+        layer=marker_cluster,
+        geom_type='Point',
+        placeholder='Cari lokasi...',
+        collapsed=False,
+        search_label='nama_lokasi'
+    ).add_to(m)
+
+    # Add fullscreen button
+    folium.plugins.Fullscreen(
+        position='topleft',
+        title='Tampilan Layar Penuh',
+        title_cancel='Keluar dari Layar Penuh',
+        force_separate_button=True
+    ).add_to(m)
     
     # Define the bounds specifically for Cangkringan area
     # Using slightly expanded boundaries for better visibility
@@ -266,8 +284,8 @@ elif page == "Peta Interaktif":
     # Display the map in Streamlit with additional options
     st_data = st_folium(
         m, 
-        width=900,
-        height=600,
+        width=1000,
+        height=700,
         returned_objects=["last_active_drawing", "last_clicked"]
     )
     
