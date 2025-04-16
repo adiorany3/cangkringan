@@ -15,7 +15,7 @@ current_dir = os.path.dirname(os.path.abspath(__file__))
 # This MUST be the first st.* call in your script
 st.set_page_config(
     page_title="Data Sapi Perah di Cangkringan",
-    page_icon=os.path.join(current_dir, "assets", "sapi_favicon.png"),
+    page_icon="🐄",
     layout="wide",
     initial_sidebar_state="expanded"
 )
@@ -91,9 +91,9 @@ with st.sidebar:
         ["Beranda", "Peta Interaktif", "Statistik", "Tentang"]
     )
     
-    st.markdown("""<div class="cow-pattern">
+    st.markdown("""<div class="cow-pattern" style="color: black;">
     <h3>Tentang Aplikasi</h3>
-    <p>Aplikasi ini menampilkan data persebaran sapi perah di Kecamatan Cangkringan, Yogyakarta.</p>
+    <p style="color: black;">Aplikasi ini menampilkan data persebaran sapi perah di Kecamatan Cangkringan, Yogyakarta.</p>
     </div>""", unsafe_allow_html=True)
 
 # Main content
