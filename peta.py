@@ -79,8 +79,6 @@ with st.sidebar:
     st.image(os.path.join(current_dir, "assets", "sapi_favicon.png"), width=100)
     st.title("Navigasi")
     
-    )
-    
     st.markdown("""<div class="cow-pattern">
     <h3>Tentang Aplikasi</h3>
     <p>Aplikasi ini menampilkan data persebaran sapi perah di Kecamatan Cangkringan, Yogyakarta.</p>
