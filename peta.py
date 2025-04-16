@@ -186,113 +186,25 @@ elif page == "Peta Interaktif":
     csv_file = os.path.join(current_dir, 'data_cangkringan.csv')
     data = pd.read_csv(csv_file)
     
-    # Calculate the center point from all data points
-    # Exact coordinates for Kecamatan Cangkringan center
-    center_lat = -7.6422  # Mengubah dari 7.6422 (nilai positif) menjadi -7.6422 (nilai negatif)
-    center_lon = 110.4350  # Mempertahankan nilai longitude
-    
-    # Create a folium map with OpenStreetMap
-    fig = Figure(width=1000, height=700)
+    # Buat peta terpusat di Kecamatan Cangkringan, Yogyakarta
+    m = folium.Map(location=[-7.6079, 110.4415], zoom_start=12)
 
-    # Create the map with OpenStreetMap using Cangkringan center
-    m = folium.Map(
-        location=[center_lat, center_lon], 
-        zoom_start=13,  # Increased zoom level to focus on Cangkringan
-        tiles="OpenStreetMap",
-        attr='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-        control_scale=True  # Menambahkan skala peta
-    )
-        
-    fig.add_child(m)
-    
-    # Add multiple map tile options
-    folium.TileLayer('CartoDB positron', name='Light Map').add_to(m)
-    folium.TileLayer('CartoDB dark_matter', name='Dark Map').add_to(m)
-    folium.TileLayer('Stamen Terrain', name='Terrain Map', attr='Map tiles by <a href="http://stamen.com">Stamen Design</a>, under <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>. Data by <a href="http://openstreetmap.org">OpenStreetMap</a>, under <a href="http://www.openstreetmap.org/copyright">ODbL</a>.').add_to(m)
-    
-    # Add Cangkringan label
-    folium.Marker(
-        [center_lat, center_lon],
-        icon=folium.DivIcon(
-            icon_size=(150, 36),
-            icon_anchor=(75, 18),
-            html='<div style="font-size: 18pt; color: darkgreen; font-weight: bold">Kecamatan Cangkringan</div>'
-        )
-    ).add_to(m)
-    
-    # Add marker cluster for better visualization when there are many markers
-    marker_cluster = MarkerCluster().add_to(m)
-    
-    # Menggunakan ikon bawaan Folium sebagai alternatif
-    dairy_icon = folium.Icon(
-        icon='info-sign', 
-        color='green',
-        icon_color='white'
-    )
-    
-    # Add markers with custom icon and popup information
+    # Tambahkan marker untuk setiap lokasi pada data CSV
     for idx, row in data.iterrows():
-        # Enhanced popup with more information
-        popup_html = f"""
-        <div style="width:200px">
-            <h4>{row['nama_lokasi']}</h4>
-            <p><b>Alamat:</b> {row.get('alamat', 'N/A')}</p>
-            <p><b>Jumlah Sapi:</b> {row.get('jumlah_sapi', 'N/A')}</p>
-            <p><b>Desa:</b> {row.get('desa', 'N/A')}</p>
-            <p><b>Produksi Susu:</b> {row.get('produksi_susu', 'N/A')} liter/hari</p>
-        </div>
-        """
-        
-        # Create the popup with custom styling
-        popup = folium.Popup(popup_html, max_width=300)
-        
-        # Add marker to the cluster
         folium.Marker(
             location=[row['latitude'], row['longitude']],
-            popup=popup,
-            icon=dairy_icon
-        ).add_to(marker_cluster)
+            popup=row['nama_lokasi']
+        ).add_to(m)
     
-    # Add location search feature
-    folium.plugins.Search(
-        layer=marker_cluster,
-        geom_type='Point',
-        placeholder='Cari lokasi...',
-        collapsed=False,
-        search_label='nama_lokasi'
-    ).add_to(m)
-
-    # Add fullscreen button
-    folium.plugins.Fullscreen(
-        position='topleft',
-        title='Tampilan Layar Penuh',
-        title_cancel='Keluar dari Layar Penuh',
-        force_separate_button=True
-    ).add_to(m)
-    
-    # Define the bounds specifically for Cangkringan area
-    # Using slightly expanded boundaries for better visibility
-    sw = [-7.6550, 110.4200]  # Southwest corner of Cangkringan
-    ne = [-7.6300, 110.4550]  # Northeast corner of Cangkringan
-    m.fit_bounds([sw, ne])
-    
-    # Add a minimap to help with navigation
-    folium.plugins.MiniMap().add_to(m)
-    
-    # Add layer control for switching between map tiles
+    # Tambahkan kontrol layer
     folium.LayerControl().add_to(m)
     
-    # Display the map in Streamlit with additional options
-    st_data = st_folium(
+    # Display the map in Streamlit
+    st_folium(
         m, 
-        width=1000,
-        height=700,
-        returned_objects=["last_active_drawing", "last_clicked"]
+        width=800,
+        height=600
     )
-    
-    # Show information about the last clicked point if available
-    if st_data["last_clicked"]:
-        st.write("Koordinat yang diklik:", st_data["last_clicked"])
 
 elif page == "Statistik":
     st.title("Statistik Peternakan Sapi Perah")
