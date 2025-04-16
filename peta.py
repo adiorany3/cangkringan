@@ -186,48 +186,16 @@ elif page == "Peta Interaktif":
     csv_file = os.path.join(current_dir, 'data_cangkringan.csv')
     data = pd.read_csv(csv_file)
     
-    # Add map style options
-    map_styles = {
-        "OpenStreetMap": "OpenStreetMap",
-        "Terrain": "Stamen Terrain",
-        "Satellite": "Stamen Satellite",
-    }
-    
-    map_style = st.selectbox("Pilih Gaya Peta:", list(map_styles.keys()))
-    
-    # Create a folium map with the selected style
+    # Create a folium map with OpenStreetMap
     fig = Figure(width=900, height=600)
 
-    # Add attribution based on the selected map style
-    if map_style == "OpenStreetMap":
-        m = folium.Map(
-            location=[-7.6079, 110.4415], 
-            zoom_start=12,
-            tiles=map_styles[map_style],
-            attr='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        )
-    elif map_style == "Terrain":
-        m = folium.Map(
-            location=[-7.6079, 110.4415], 
-            zoom_start=12,
-            tiles=map_styles[map_style],
-            attr='Map tiles by <a href="http://stamen.com">Stamen Design</a>, under <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>. Data by <a href="http://openstreetmap.org">OpenStreetMap</a>, under <a href="http://www.openstreetmap.org/copyright">ODbL</a>.'
-        )
-    elif map_style == "Satellite":
-        m = folium.Map(
-            location=[-7.6079, 110.4415], 
-            zoom_start=12,
-            tiles=map_styles[map_style],
-            attr='Map tiles by <a href="http://stamen.com">Stamen Design</a>, under <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>. Data by <a href="http://openstreetmap.org">OpenStreetMap</a>, under <a href="http://www.openstreetmap.org/copyright">ODbL</a>.'
-        )
-    else:
-        # Default case with OpenStreetMap attribution
-        m = folium.Map(
-            location=[-7.6079, 110.4415], 
-            zoom_start=12,
-            tiles="OpenStreetMap",
-            attr='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        )
+    # Create the map with OpenStreetMap
+    m = folium.Map(
+        location=[-7.6079, 110.4415], 
+        zoom_start=12,
+        tiles="OpenStreetMap",
+        attr='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    )
         
     fig.add_child(m)
     
@@ -264,9 +232,6 @@ elif page == "Peta Interaktif":
     
     # Add a minimap to help with navigation
     folium.plugins.MiniMap().add_to(m)
-    
-    # Add layer control for toggling different map layers
-    folium.LayerControl().add_to(m)
     
     # Display the map in Streamlit with additional options
     st_data = st_folium(
