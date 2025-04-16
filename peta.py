@@ -9,10 +9,13 @@ import matplotlib.pyplot as plt
 import numpy as np
 from branca.element import Figure
 
+# Get current directory for file paths
+current_dir = os.path.dirname(os.path.abspath(__file__))
+
 # This MUST be the first st.* call in your script
 st.set_page_config(
     page_title="Data Sapi Perah di Cangkringan",
-    page_icon="./assets/sapi_favicon.png",
+    page_icon=os.path.join(current_dir, "assets", "sapi_favicon.png"),
     layout="wide",
     initial_sidebar_state="expanded"
 )
@@ -73,12 +76,9 @@ st.markdown("""
 
 # Sidebar for navigation and filters
 with st.sidebar:
-    st.image("./assets/sapi_favicon.png", width=100)
+    st.image(os.path.join(current_dir, "assets", "sapi_favicon.png"), width=100)
     st.title("Navigasi")
     
-    page = st.radio(
-        "Pilih Halaman:", 
-        ["Beranda", "Peta Interaktif", "Statistik", "Tentang"]
     )
     
     st.markdown("""<div class="cow-pattern">
