@@ -2,7 +2,7 @@ import pandas as pd
 import folium
 import os
 import streamlit as st
-from streamlit_folium import folium_static
+from streamlit_folium import st_folium
 
 # Set judul aplikasi
 st.title("Peta Lokasi Cangkringan")
@@ -31,7 +31,7 @@ for idx, row in data.iterrows():
     ).add_to(m)
 
 # Tampilkan peta di aplikasi Streamlit
-folium_static(m)
+st_folium(m, width=725)
 
 # Tampilkan informasi tambahan
 st.info("Data terakhir diperbarui: April 2025")
